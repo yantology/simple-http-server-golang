@@ -1,0 +1,63 @@
+basePath: /api/v1
+host: localhost:8080
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample server Petstore server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /form:
+    post:
+      consumes:
+      - application/json
+      description: Handle form submission and parse form data
+      parameters:
+      - description: Name
+        in: query
+        name: name
+        type: string
+      - description: Address
+        in: query
+        name: address
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: POST request successful
+          schema:
+            type: string
+        "400":
+          description: ParseForm() err
+          schema:
+            type: string
+      summary: Handle form submission
+      tags:
+      - form
+  /hello:
+    get:
+      consumes:
+      - application/json
+      description: Respond with a hello message
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: hello!
+          schema:
+            type: string
+        "404":
+          description: 404 not found
+          schema:
+            type: string
+      summary: Say hello
+      tags:
+      - hello
+swagger: "2.0"
